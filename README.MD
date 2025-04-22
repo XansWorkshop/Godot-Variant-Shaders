@@ -45,6 +45,15 @@ To add variants to your shader, place the following block anywhere (but ideally 
 
 #endif
 
+// You can then leverage these features like so:
+
+#ifdef A
+render_mode unshaded, skip_vertex_transform;
+#else
+render_mode skip_vertex_transform; 
+#endif
+
+// And this will toggle unshaded rendering with the "A" option.
 
 ```
 
