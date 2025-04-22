@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" script_class="VariantShaderMaterial" load_steps=3 format=3 uid="uid://dvdmeb5xwe5l1"]
+
+[ext_resource type="Shader" uid="uid://cpcm5eqy5d02h" path="res://test_shader.gdshader" id="1_t8mu3"]
+[ext_resource type="Script" uid="uid://bvo138ymaxqop" path="res://Code/XansGodotExtensions/VariantShaderMaterial.cs" id="1_xu4yx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_t8mu3")
+script = ExtResource("1_xu4yx")
+original = ExtResource("1_t8mu3")
+HALF_BRIGHTNESS = false
+variant = "NONE"
+metadata/_custom_type_script = "uid://bvo138ymaxqop"
