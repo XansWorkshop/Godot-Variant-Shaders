@@ -1,12 +1,15 @@
 shader_type spatial;
-render_mode unshaded;
 
 #ifdef ADVANCED_SHADER_FEATURES_FORK
 // ^ This is purely for formatting. The fork adds the following lines as valid lines:
 
-#pragma features HALF_BRIGHTNESS
+#pragma features HALF_BRIGHTNESS UNSHADED
 #pragma exclusive_variants NONE RED GREEN BLUE
 
+#endif
+
+#ifdef UNSHADED
+render_mode unshaded;
 #endif
 
 void fragment() {
