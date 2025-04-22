@@ -14,6 +14,13 @@ Distinctly, while Godot does have custom shader support, it does not support sta
 
 To use `VariantShaderMaterial`, you must create it as a new resource just like you would an ordinary `ShaderMaterial`. It has two distinct kinds of flags.
 
+## To-Do List
+
+* ~~C# Implementation~~
+* GDScript Implementation
+* Shader Graph (VisualShader) Implementation
+* Global variants/features? (Hard to do efficiently and reasonably)
+
 ## Terminology and Flags
 
 * A **Feature** refers to a toggleable boolean value, like a flag. Any combination of these features can be declared, and any amount can be mixed and matched. In the inspector, these will show as different boolean options.
@@ -23,10 +30,11 @@ All features go into the same pool; unlike Unity, different declarations do not 
 
 Likewise, all exclusive variants go into the same pool; You cannot have more than one dropdown. I may change this later. For the time being, you can use features and then use the `#error "Error message"` directive in GLSL to prevent invalid usage.
 
-!!! warning You can not place features and variants into static branches. 
-    They always evaluate, and **are not subject to the preprocessor!** To disable a variant or feature, you need to comment out the line.
-
 ## In GLSL
+
+**NOTE:** You **can not** conditionally enable or disable the `#pragma` lines with static branching! They **always** evaluate, and **are not subject to the preprocessor!** To disable a variant or feature, you need to comment out the line.
+
+**🐛 POSSIBLE BUG:** Block comments `/* */` may not prevent features from being parsed. You need to add a non-whitespace character before them, like a normal comment `//`.
 
 To add variants to your shader, place the following block anywhere (but ideally near the start):
 ```glsl
