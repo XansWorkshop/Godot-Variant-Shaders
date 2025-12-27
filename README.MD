@@ -1,5 +1,8 @@
 # Godot Variant Shader Material
 
+> [!CAUTION]
+> This is now an official component of [Godot: Conservatory Edition](https://github.com/XansWorkshop/conservatory-godot). This repository has been archived and is considered outdated.
+
 `VariantShaderMaterial` is a new custom `ShaderMaterial` type which enables the use of **shader variants.** These are boolean features that can be toggled during runtime, **but which do not require the use of a dynamic branch** thus ensuring your shader code is as fast and small as it needs to be for the circumstances.
 
 If you come from Unity, you may know of these already:
